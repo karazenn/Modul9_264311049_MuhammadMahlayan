@@ -13,7 +13,7 @@ JOIN lokasi l ON u.user_id = l.mitra_id
 WHERE u.role = 'mitra'
 GROUP BY u.user_id, u.name;
 ```
-![hasil-no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
+![hasil]-no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
 
   Analisis Kompleksitas Query:
 
@@ -44,7 +44,7 @@ SET total_lokasi_terdaftar = (
     WHERE l.mitra_id = u.user_id
 );
 ```
-![hasil-no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
+![hasil-no] 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
 
 3. Pembuktian (Tahap 3): Tulis query SELECT sederhana untuk memanggil data dari kolom/tabel denormalisasi (Tahap 2) tanpa menggunakan JOIN atau agregasi. Bandingkan dengan query Tahap 1.
 
