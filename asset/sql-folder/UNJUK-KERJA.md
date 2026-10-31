@@ -45,7 +45,7 @@ SET total_lokasi_terdaftar = (
     WHERE l.mitra_id = u.user_id
 );
 ```
-![hasil-no-2](../asset-2/hasilno2.jpeg)
+![hasil-no-3](.../asset-2/hasilno3.jpeg)
 
 3. Pembuktian (Tahap 3): Tulis query SELECT sederhana untuk memanggil data dari kolom/tabel denormalisasi (Tahap 2) tanpa menggunakan JOIN atau agregasi. Bandingkan dengan query Tahap 1.
 
