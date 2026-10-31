@@ -38,7 +38,7 @@ WHERE role = 'mitra';
 
 2. Berdasarkan percobaan kelompok Anda, jelaskan dengan bahasa sendiri kelebihan denormalisasi dalam memangkas penggunaan klausa JOIN pada sistem informasi!
 
-Jawab: Kelebihan utama denormalisasi dalam sistem ini adalah kemampuannya dalam memotong waktu dan fungsi agregasi nya yang berat saat menampilkan data perhitungan (rekapitulasi) dengan menyimpan atribut hasil perhitungan langsung dalam tabel master, jadi sistem hanya perlu memanggilnya dan membuat prosesnya menjadi cepat, dan optimal
+Jawab: Keunggulan denormalisasi dalam sistem ini adalah mengurangi kebutuhan penggunaan klausa JOIN serta mempercepat proses pengambilan data, khususnya untuk keperluan rekapitulasi. Hal ini dilakukan dengan menyimpan hasil perhitungan atau atribut tertentu secara langsung pada tabel utama, sehingga sistem tidak perlu melakukan proses penggabungan dan perhitungan ulang yang kompleks. Dengan demikian, proses pengolahan dan penyajian data menjadi lebih efisien.
 
 3.Jelaskan secara singkat, apa risiko utama terhadap data (contoh: inkonsistensi) yang muncul akibat kelompok Anda menambahkan atribut turunan atau tabel rekapitulasi tersebut?
 
