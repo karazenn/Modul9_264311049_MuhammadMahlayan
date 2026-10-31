@@ -13,7 +13,7 @@ JOIN lokasi l ON u.user_id = l.mitra_id
 WHERE u.role = 'mitra'
 GROUP BY u.user_id, u.name;
 ```
-![hasil no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
+![hasil-no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
 
   Analisis Kompleksitas Query:
 
@@ -31,14 +31,36 @@ Kompleksitas Ruang (Space Complexity):O(K), di mana K adalah jumlah baris unik m
 
 Jawab:
 
+```sql
+-- 2. A. Menambahkan atribut redundan (turunan) pada tabel master (users)
+ALTER TABLE users 
+ADD COLUMN total_lokasi_terdaftar INT DEFAULT 0;
 
+-- B. Mengisi kolom turunan tersebut dengan data hasil agregasi dari tabel lokasi
+UPDATE users u
+SET total_lokasi_terdaftar = (
+    SELECT COUNT(l.lokasi_id)
+    FROM lokasi l
+    WHERE l.mitra_id = u.user_id
+);
+```
+![hasil-no 1(SQL-folder/ASSETS-folder/modul9_hasilno1.jpg.jpeg)
 
 3. Pembuktian (Tahap 3): Tulis query SELECT sederhana untuk memanggil data dari kolom/tabel denormalisasi (Tahap 2) tanpa menggunakan JOIN atau agregasi. Bandingkan dengan query Tahap 1.
 
 Jawab:
 
+```sql
+-- 3. Query baca yang sangat cepat untuk fitur dasbor tanpa JOIN atau agregasi
+SELECT 
+    user_id AS id_mitra,
+    name AS nama_mitra,
+    total_lokasi_terdaftar
+FROM users
+WHERE role = 'mitra';
+```
 
-
+![hasil-no-3](SQL-folder/ASSETS-foder/Modul9-hasilno3.jpg.jpeg)
 
 Perbandingan Antara Tahap 1 dan Tahap 3 Dari Sisi Kompleksitas & Performa:
 -Tahap 1 (Normalisasi Penuh): Menggunakan JOIN dan fungsi agregasi COUNT(). Proses kerjanya dinamis (on-the-fly), di mana MySQL harus mencocokkan baris antar tabel secara langsung setiap kali kueri dipanggil. Kompleksitas waktunya tinggi (O(N×M)), sehingga jika data pada tabel lokasi sudah mencapai ribuan baris, aplikasi akan terasa lambat (slow query) saat memuat halaman dasbor.
