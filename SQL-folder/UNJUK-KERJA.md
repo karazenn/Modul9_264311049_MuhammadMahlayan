@@ -13,7 +13,7 @@ JOIN lokasi l ON u.user_id = l.mitra_id
 WHERE u.role = 'mitra'
 GROUP BY u.user_id, u.name;
 ```
-![hasil no 1(ASSETS/modul9_hasilno1.jpeg.jpg)
+![hasil no 1(ASSETS-folder/modul9_hasilno1.jpeg.jpg)
 
   Analisis Kompleksitas Query:
 
