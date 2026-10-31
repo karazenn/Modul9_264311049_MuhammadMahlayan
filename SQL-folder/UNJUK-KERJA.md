@@ -1,2 +1,1 @@
-<img src= SQL-folder/ASSETS-folder/modul9_hasilno1.jpeg
-
+![hasil-no-1](SQL-folder/ASSETS-folder/Modul9-hasilno1.jpeg)
