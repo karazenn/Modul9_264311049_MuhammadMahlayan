@@ -14,7 +14,7 @@ WHERE u.role = 'mitra'
 GROUP BY u.user_id, u.name;
 ```
 
-![hasil-no-1](.../asset-2/hasilno1.jpeg)
+![hasil-no-1](../asset-2/hasilno1.jpeg)
 
   Analisis Kompleksitas Query:
 
